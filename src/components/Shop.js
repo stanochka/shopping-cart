@@ -2,9 +2,9 @@ import { Item } from './Item';
 
 export const Shop = () => {
     return (
-        <div>
+        <main>
             <Item id={1} />
             <Item id={2} />
-        </div>
+        </main>
     )
 }

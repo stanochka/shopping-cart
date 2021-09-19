@@ -1,6 +1,6 @@
 export const Footer = () => {
     return (
-        <footer>
+        <footer className='Footer'>
             Assignment by <a href='https://www.theodinproject.com/paths/full-stack-javascript/courses/javascript/lessons/shopping-cart' 
                              target='_blank' 
                              rel='noreferrer'>The Odin Project</a>. 
