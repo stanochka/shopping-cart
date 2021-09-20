@@ -9,12 +9,15 @@ import { Navbar } from './components/Navbar';
 import { Home } from './components/Home';
 import { Cart } from './components/Cart';
 import { Shop } from './components/Shop';
+import { ItemDetails } from "./components/ItemDetails";
 
 export const App = () => {
     return (
         <Router>
             <div className='App'>
                 <Navbar />
+
+                <main>
 
                 <Switch>
                     <Route path="/shop">
@@ -23,10 +26,15 @@ export const App = () => {
                     <Route path="/cart">
                         <Cart />
                     </Route>
-                    <Route path="/">
+                    <Route exact path="/">
                         <Home />
                     </Route>
+                    <Route path='/items/:id'>
+                        <ItemDetails />
+                    </Route>
                 </Switch>
+
+                </main>
 
                 <Footer />
             </div>
