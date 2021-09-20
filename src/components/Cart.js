@@ -1,3 +1,7 @@
-export const Cart = () => {
-    return <main>Cart</main>
+export const Cart = ({items}) => {
+    return (
+        <div className='Cart'>
+            {items.map((item, i) => <div key={i}>{item.title}</div>)}
+        </div>
+    )
 }

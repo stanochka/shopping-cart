@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Item } from './Item';
 
-export const Shop = () => {
+export const Shop = ({addToCart}) => {
 
     const [items, setItems] = useState([]);
 
@@ -13,7 +13,7 @@ export const Shop = () => {
 
     return (
         <div className='Shop'>
-            {items.map(item => <Item key={item.id} item={item} />)}
+            {items.map(item => <Item key={item.id} item={item} addToCart={addToCart} />)}
         </div>
     )
 }

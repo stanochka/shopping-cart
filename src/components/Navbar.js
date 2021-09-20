@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-export const Navbar = () => {
+export const Navbar = ({count}) => {
     return (
     <nav className='Navbar'>
         <ul>
@@ -11,7 +11,7 @@ export const Navbar = () => {
               <Link to="/shop">Shop</Link>
             </li>
             <li>
-              <Link to="/cart">Cart</Link>
+              <Link to="/cart">Cart - {count}</Link>
             </li>
           </ul>
     </nav>

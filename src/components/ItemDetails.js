@@ -1,13 +1,12 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 
-export const ItemDetails = () => {
+export const ItemDetails = ({ addToCart }) => {
     const { id } = useParams();
 
     const [item, setItem] = useState({});
 
     useEffect(() => {
-        console.log(id);
         fetch(`https://fakestoreapi.com/products/${id}`)
             .then(res => res.json())
             .then(json => setItem(json));
@@ -15,15 +14,13 @@ export const ItemDetails = () => {
     }, []);
 
     return (
-        <main>
-            <div className='ItemDetails'>
+         <div className='ItemDetails'>
             <h1>{item.title}</h1>
             <img className='itemDetailsImage' src={item.image} alt={item.title} />
-            <div className='price'>${item.price}</div>
+            <h2>${item.price}</h2>
             <p>{item.description}</p>
             <div className='category'>{item.category}</div>
-            <button className='addToCart'>Add to cart</button>
-            </div>
-        </main>
+            <button className='addToCart' onClick={() => addToCart(item)}>Add to cart</button>
+        </div>
     )
 }
