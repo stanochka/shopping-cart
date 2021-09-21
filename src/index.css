@@ -7,6 +7,8 @@
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
+  display: flex;
+  flex-direction: column;
 }
 
 .Navbar ul {
@@ -41,12 +43,35 @@ body {
 }
 
 main {
-  min-height: calc(100vh - 60px);
+  text-align: center;
+  min-height: calc(100vh - 70px);
+}
+
+.Home {
+  height: calc(100vh - 70px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: url('./background.jpg');
+  background-size: cover;
+  color: white;
+}
+
+.Home p {
+  max-width: 1000px;
+  margin: 10px;
+}
+
+.Home h1 {
+  font-size: 4em;
 }
 
 .Shop {
   display: grid;
-  width: 100vw;
+  width: 95vw;
+  max-width: 1000px;
+  margin: auto;
   grid-template-columns: repeat(3, 1fr);
 }
 
@@ -63,6 +88,33 @@ main {
   margin: 10px;
   padding: 10px;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 15px;
+}
+
+.Item a {
+  text-decoration: none;
+  color: black;
+}
+
+.Item h2 {
+  font-size: 1.1em;
+}
+
+.category {
+  padding: 5px;
+  background: lightblue;
+  border-radius: 5px;
+  font-size: .8em;
+  margin: 5px;
+}
+
+.price {
+  font-size: 1.2em;
+  margin: 10px;
 }
 
 .ItemDetails {
@@ -75,4 +127,60 @@ main {
   object-fit: contain;
   width: 300px;
   height: 300px;
+}
+
+.CartItem {
+  display: grid;
+  grid-template-columns: 4fr 1fr 1fr;
+  width: 80%;
+  max-width: 1000px;
+  border: 1px solid black;
+  margin: 10px auto;
+  align-items: center;
+  padding: 10px;
+  min-width: 250px;
+}
+
+.CartItemTitle a {
+  text-decoration: none;
+  color: black;
+}
+
+.CartItemTitle {
+  text-align: left;
+  margin-left: 20px;
+}
+
+.CartItemImage {
+  object-fit: contain;
+  width: 100px;
+  height: 100px;
+}
+
+.CartPrice {
+  text-align: center;
+}
+
+.CartTotal {
+  font-size: 2em;
+  width: 80%;
+  min-width: 250px;
+  max-width: 1000px;
+  text-align: right;
+  padding: 10px;
+  margin: auto;
+}
+
+.Payment {
+  margin: auto;
+  padding: 20px;
+  font-size: 1.5em;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.addToCart {
+  cursor: pointer;
+  padding: 5px;
+  margin: 10px;
 }
