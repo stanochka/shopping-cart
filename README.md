@@ -1,6 +1,6 @@
 # Shopping Cart
 
-This project was created as the assignment for [the Odin Project](https://www.theodinproject.com/paths/full-stack-javascript/courses/javascript/lessons/shopping-cart).
+This project was created as a solution for [the Odin Project](https://www.theodinproject.com/paths/full-stack-javascript/courses/javascript/lessons/shopping-cart) assignment.
 
 ## Assignment
 
