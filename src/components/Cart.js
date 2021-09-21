@@ -1,15 +1,15 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect } from 'react';
 
-export const Cart = ({items, addToCart, deleteFromCart}) => {
+export const Cart = ({items, addToCart, deleteFromCart, clearCart}) => {
     const [sum, setSum] = useState(0);
 
+    // eslint-disable-next-line
     useEffect(() => {
         items.length ? 
         setSum(items.map(i => i.price * i.count).reduce((a,b) => a+b).toFixed(2)) : 
         setSum(0);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
+    });
 
     return (
         <div className='Cart'>
@@ -27,7 +27,10 @@ export const Cart = ({items, addToCart, deleteFromCart}) => {
               </div>
             ))}
             <div className='CartTotal'>Total: ${sum}</div>
-            {sum > 0 && <button className='Payment' onClick={() =>  alert('Thanks for stopping by!')}>Proceed to Payment</button>}
+            {sum > 0 && <button className='Payment' onClick={() => {
+                alert('Thanks for stopping by!');
+                clearCart();
+                }}>Proceed to Payment</button>}
         </div>
     )
 }

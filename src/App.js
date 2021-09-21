@@ -35,6 +35,11 @@ export const App = () => {
         setItems(items.filter(i => i.count !== 0));
     }
 
+    const clearCart = () => {
+        setCount(0);
+        setItems([]);
+    }
+
     return (
         <Router>
             <div className='App'>
@@ -51,7 +56,8 @@ export const App = () => {
                     <Route path="/cart">
                         <Cart items={items} 
                               addToCart={addToCart} 
-                              deleteFromCart={deleteFromCart} />
+                              deleteFromCart={deleteFromCart}
+                              clearCart={clearCart} />
                     </Route>
                     <Route exact path="/">
                         <Home />
