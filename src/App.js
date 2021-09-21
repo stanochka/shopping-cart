@@ -18,7 +18,7 @@ export const App = () => {
     const [count, setCount] = useState(0);
     const [items, setItems] = useState([]);
 
-    const addToCart = (item) => {
+    const addToCart = item => {
         setCount(count + 1);
         if (!items.filter(i => i.id === item.id).length) {
             item.count = 1;
@@ -29,7 +29,7 @@ export const App = () => {
         }   
     }
 
-    const deleteFromCart = (item) => {
+    const deleteFromCart = item => {
         setCount(count - 1);
         items.filter(i => i.id === item.id).map(i => i.count -= 1);
         setItems(items.filter(i => i.count !== 0));
@@ -57,7 +57,9 @@ export const App = () => {
                         <Home />
                     </Route>
                     <Route path='/items/:id'>
-                        <ItemDetails addToCart={addToCart} />
+                        <ItemDetails  items={items} 
+                                      addToCart={addToCart} 
+                                      deleteFromCart={deleteFromCart} />
                     </Route>
                 </Switch>
 

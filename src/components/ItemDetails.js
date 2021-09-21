@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 
-export const ItemDetails = ({ addToCart }) => {
+export const ItemDetails = ({ items, addToCart, deleteFromCart }) => {
     const { id } = useParams();
 
     const [item, setItem] = useState({});
@@ -13,6 +13,14 @@ export const ItemDetails = ({ addToCart }) => {
     // eslint-disable-next-line
     }, []);
 
+    const buttonArea = !items.filter(i => i.id === item.id).length ? 
+    <button className='addToCart' onClick={() => addToCart(item)}>Add to cart</button> :
+    (<div className='CartItemCount'>
+                    <button className='CartItemCountBtn' onClick={() => deleteFromCart(item)}>-</button>
+                     {items.filter(i => i.id === item.id)[0].count} 
+                    <button className='CartItemCountBtn' onClick={() => addToCart(item)}>+</button>
+                </div>)
+
     return (
          <div className='ItemDetails'>
             <h1>{item.title}</h1>
@@ -20,7 +28,7 @@ export const ItemDetails = ({ addToCart }) => {
             <h2>${item.price}</h2>
             <p>{item.description}</p>
             <div className='itemDetailsCategory'>{item.category}</div>
-            <button className='addToCart' onClick={() => addToCart(item)}>Add to cart</button>
+            {buttonArea}
         </div>
     )
 }
