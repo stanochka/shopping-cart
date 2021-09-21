@@ -1,21 +1,26 @@
 import { useState, useEffect } from 'react';
 import { Item } from './Item';
 
-export const Shop = ({addToCart}) => {
+export const Shop = ({items, addToCart, deleteFromCart}) => {
 
-    const [items, setItems] = useState([]);
+    const [catalog, setCatalog] = useState([]);
 
     useEffect(() => {
         fetch('https://fakestoreapi.com/products')
             .then(res => res.json())
-            .then(json => setItems(json))
+            .then(json => setCatalog(json))
     }, [])
 
     return (
         <div className='ShopWrapper'>
             <h1>Fake Shop Catalog</h1>
             <div className='Shop'>
-                {items.map(item => <Item key={item.id} item={item} addToCart={addToCart} />)}
+                {catalog.map(item => <Item key={item.id} 
+                                           item={item} 
+                                           items={items}
+                                           addToCart={addToCart}
+                                           deleteFromCart={deleteFromCart}
+                                          />)}
             </div>
         </div>
     )

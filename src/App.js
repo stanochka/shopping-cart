@@ -44,7 +44,9 @@ export const App = () => {
 
                 <Switch>
                     <Route path="/shop">
-                        <Shop addToCart={addToCart} />
+                        <Shop items={items} 
+                              addToCart={addToCart}
+                              deleteFromCart={deleteFromCart} />
                     </Route>
                     <Route path="/cart">
                         <Cart items={items} 
