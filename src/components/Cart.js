@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 export const Cart = ({items}) => {
-    let sum = items.length ? items.map(i => i.price).reduce((a,b) => a+b) : 0;
+    let sum = items.length ? items.map(i => i.price).reduce((a,b) => a+b).toFixed(2) : 0;
 
     return (
         <div className='Cart'>

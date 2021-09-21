@@ -129,6 +129,15 @@ main {
   height: 300px;
 }
 
+.itemDetailsCategory {
+  padding: 5px;
+  background: lightblue;
+  border-radius: 5px;
+  font-size: .8em;
+  width: 30%;
+  margin: 20px auto;
+}
+
 .CartItem {
   display: grid;
   grid-template-columns: 4fr 1fr 1fr;
@@ -172,9 +181,9 @@ main {
 }
 
 .Payment {
-  margin: auto;
+  margin: 20px auto;
   padding: 20px;
-  font-size: 1.5em;
+  font-size: 1.2em;
   border-radius: 15px;
   cursor: pointer;
 }

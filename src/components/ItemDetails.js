@@ -19,7 +19,7 @@ export const ItemDetails = ({ addToCart }) => {
             <img className='itemDetailsImage' src={item.image} alt={item.title} />
             <h2>${item.price}</h2>
             <p>{item.description}</p>
-            <div className='category'>{item.category}</div>
+            <div className='itemDetailsCategory'>{item.category}</div>
             <button className='addToCart' onClick={() => addToCart(item)}>Add to cart</button>
         </div>
     )
