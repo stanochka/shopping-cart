@@ -12,8 +12,11 @@ export const Shop = ({addToCart}) => {
     }, [])
 
     return (
-        <div className='Shop'>
-            {items.map(item => <Item key={item.id} item={item} addToCart={addToCart} />)}
+        <div className='ShopWrapper'>
+            <h1>Fake Shop Catalog</h1>
+            <div className='Shop'>
+                {items.map(item => <Item key={item.id} item={item} addToCart={addToCart} />)}
+            </div>
         </div>
     )
 }

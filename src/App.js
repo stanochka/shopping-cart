@@ -20,7 +20,19 @@ export const App = () => {
 
     const addToCart = (item) => {
         setCount(count + 1);
-        setItems([...items, item]);
+        if (!items.filter(i => i.id === item.id).length) {
+            item.count = 1;
+            setItems([...items, item]);
+        } else {
+            items.filter(i => i.id === item.id).map(i => i.count += 1);
+            setItems(items);
+        }   
+    }
+
+    const deleteFromCart = (item) => {
+        setCount(count - 1);
+        items.filter(i => i.id === item.id).map(i => i.count -= 1);
+        setItems(items.filter(i => i.count !== 0));
     }
 
     return (
@@ -35,7 +47,9 @@ export const App = () => {
                         <Shop addToCart={addToCart} />
                     </Route>
                     <Route path="/cart">
-                        <Cart count={count} items={items} />
+                        <Cart items={items} 
+                              addToCart={addToCart} 
+                              deleteFromCart={deleteFromCart} />
                     </Route>
                     <Route exact path="/">
                         <Home />
