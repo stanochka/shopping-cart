@@ -17,5 +17,5 @@ This project was created as a solution for [the Odin Project](https://www.theodi
 
 ## Demo
 
-[Demo](https://tender-jang-b6bc04.netlify.app)
+[https://shopping-cart-odin.netlify.app/](https://shopping-cart-odin.netlify.app/)
 
